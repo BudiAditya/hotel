@@ -214,7 +214,7 @@ CREATE TABLE IF NOT EXISTS `cms_logs` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table be-hotel.cms_logs: ~102 rows (approximately)
 /*!40000 ALTER TABLE `cms_logs` DISABLE KEYS */;
@@ -323,7 +323,11 @@ REPLACE INTO `cms_logs` (`id`, `ipaddress`, `useragent`, `url`, `description`, `
 	(102, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36', 'http://127.0.0.1:8000/admin/booking/edit-save/2', 'Update data test at Booking', '<table class="table table-striped"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>services_price</td><td>550000</td><td>300000</td></tr><tr><td>grand_total</td><td>3550000</td><td>3300000</td></tr><tr><td>custom_field_1</td><td></td><td></td></tr></tbody></table>', 1, '2019-01-19 13:38:23', NULL),
 	(103, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://127.0.0.1:9001/admin/login', 'admin@admin.com login with IP Address 127.0.0.1', '', 1, '2019-04-12 02:41:25', NULL),
 	(104, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://127.0.0.1:9001/admin/logout', ' logout', '', NULL, '2019-04-12 03:06:35', NULL),
-	(105, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://127.0.0.1:8000/admin/login', 'admin@admin.com login with IP Address 127.0.0.1', '', 1, '2019-04-26 14:41:10', NULL);
+	(105, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://127.0.0.1:8000/admin/login', 'admin@admin.com login with IP Address 127.0.0.1', '', 1, '2019-04-26 14:41:10', NULL),
+	(106, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://127.0.0.1:8000/admin/login', 'admin@admin.com login with IP Address 127.0.0.1', '', 1, '2019-05-02 07:19:32', NULL),
+	(107, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://127.0.0.1:8000/admin/statistic_builder/add-save', 'Add New Data Dashboard at Statistic Builder', '', 1, '2019-05-02 07:19:46', NULL),
+	(108, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://127.0.0.1:8000/admin/menu_management/add-save', 'Add New Data Dashboard at Menu Management', '', 1, '2019-05-02 07:33:08', NULL),
+	(109, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://127.0.0.1:8000/admin/logout', 'admin@admin.com logout', '', 1, '2019-05-02 07:44:11', NULL);
 /*!40000 ALTER TABLE `cms_logs` ENABLE KEYS */;
 
 -- Dumping structure for table be-hotel.cms_menus
@@ -342,7 +346,7 @@ CREATE TABLE IF NOT EXISTS `cms_menus` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table be-hotel.cms_menus: ~20 rows (approximately)
 /*!40000 ALTER TABLE `cms_menus` DISABLE KEYS */;
@@ -366,7 +370,8 @@ REPLACE INTO `cms_menus` (`id`, `name`, `type`, `path`, `color`, `icon`, `parent
 	(18, 'Featured Room', 'Route', 'AdminFeaturedRoomControllerGetIndex', NULL, 'fa fa-home', 16, 1, 0, 1, 4, '2019-01-15 05:31:29', NULL),
 	(19, 'Restaurant Menu', 'Route', 'AdminRestaurantMenuControllerGetIndex', NULL, 'fa fa-cutlery', 16, 1, 0, 1, 5, '2019-01-15 07:20:47', NULL),
 	(20, 'Jumbotron', 'Route', 'AdminJumbotronControllerGetIndex', NULL, 'fa fa-th', 16, 1, 0, 1, 6, '2019-01-15 07:43:55', NULL),
-	(21, 'About Us', 'Route', 'AdminAboutControllerGetIndex', NULL, 'fa fa-info-circle', 16, 1, 0, 1, 1, '2019-01-15 10:02:42', NULL);
+	(21, 'About Us', 'Route', 'AdminAboutControllerGetIndex', NULL, 'fa fa-info-circle', 16, 1, 0, 1, 1, '2019-01-15 10:02:42', NULL),
+	(22, 'Dashboard', 'Statistic', 'statistic_builder/show/dashboard', 'normal', 'fa fa-tachometer', 0, 1, 1, 1, NULL, '2019-05-02 07:33:08', NULL);
 /*!40000 ALTER TABLE `cms_menus` ENABLE KEYS */;
 
 -- Dumping structure for table be-hotel.cms_menus_privileges
@@ -375,7 +380,7 @@ CREATE TABLE IF NOT EXISTS `cms_menus_privileges` (
   `id_cms_menus` int(11) DEFAULT NULL,
   `id_cms_privileges` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table be-hotel.cms_menus_privileges: ~21 rows (approximately)
 /*!40000 ALTER TABLE `cms_menus_privileges` DISABLE KEYS */;
@@ -400,7 +405,8 @@ REPLACE INTO `cms_menus_privileges` (`id`, `id_cms_menus`, `id_cms_privileges`) 
 	(21, 18, 1),
 	(22, 19, 1),
 	(23, 20, 1),
-	(24, 21, 1);
+	(24, 21, 1),
+	(25, 22, 1);
 /*!40000 ALTER TABLE `cms_menus_privileges` ENABLE KEYS */;
 
 -- Dumping structure for table be-hotel.cms_moduls
@@ -564,7 +570,7 @@ REPLACE INTO `cms_settings` (`id`, `name`, `content`, `content_input_type`, `dat
 	(9, 'smtp_password', '', 'text', NULL, NULL, '2018-12-09 14:56:32', NULL, 'Email Setting', 'SMTP Password'),
 	(10, 'appname', 'Hotel', 'text', NULL, NULL, '2018-12-09 14:56:32', NULL, 'Application Setting', 'Application Name'),
 	(11, 'default_paper_size', 'Legal', 'text', NULL, 'Paper size, ex : A4, Legal, etc', '2018-12-09 14:56:32', NULL, 'Application Setting', 'Default Paper Print Size'),
-	(12, 'logo', NULL, 'upload_image', NULL, NULL, '2018-12-09 14:56:32', NULL, 'Application Setting', 'Logo'),
+	(12, 'logo', 'uploads/2019-05/6f1997a9d5a284f1fc4ddb48d428166f.png', 'upload_image', NULL, NULL, '2018-12-09 14:56:32', NULL, 'Application Setting', 'Logo'),
 	(13, 'favicon', NULL, 'upload_image', NULL, NULL, '2018-12-09 14:56:32', NULL, 'Application Setting', 'Favicon'),
 	(14, 'api_debug_mode', 'true', 'select', 'true,false', NULL, '2018-12-09 14:56:32', NULL, 'Application Setting', 'API Debug Mode'),
 	(15, 'google_api_key', NULL, 'text', NULL, NULL, '2018-12-09 14:56:32', NULL, 'Application Setting', 'Google API Key'),
@@ -589,10 +595,12 @@ CREATE TABLE IF NOT EXISTS `cms_statistics` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table be-hotel.cms_statistics: ~0 rows (approximately)
 /*!40000 ALTER TABLE `cms_statistics` DISABLE KEYS */;
+REPLACE INTO `cms_statistics` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
+	(1, 'Dashboard', 'dashboard', '2019-05-02 07:19:46', NULL);
 /*!40000 ALTER TABLE `cms_statistics` ENABLE KEYS */;
 
 -- Dumping structure for table be-hotel.cms_statistic_components
@@ -608,10 +616,15 @@ CREATE TABLE IF NOT EXISTS `cms_statistic_components` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table be-hotel.cms_statistic_components: ~0 rows (approximately)
 /*!40000 ALTER TABLE `cms_statistic_components` DISABLE KEYS */;
+REPLACE INTO `cms_statistic_components` (`id`, `id_cms_statistics`, `componentID`, `component_name`, `area_name`, `sorting`, `name`, `config`, `created_at`, `updated_at`) VALUES
+	(1, 1, '0ac605fc6c699c75becebc23e5ace0d1', 'smallbox', 'area1', 0, NULL, '{"name":"Users","icon":"ion-person","color":"bg-green","link":"#","sql":"Select count(id) from cms_users"}', '2019-05-02 07:21:03', NULL),
+	(2, 1, '9d407f0d3ab464e05111f6a7fe90b84c', 'smallbox', 'area2', 0, NULL, '{"name":"Rooms","icon":"ion-home","color":"bg-green","link":"#","sql":"select count(id) from room"}', '2019-05-02 07:21:05', NULL),
+	(3, 1, '448b7e637e7344fe2878377dab7a6d0a', 'smallbox', 'area3', 0, NULL, '{"name":"Bookings","icon":"ion-calendar","color":"bg-aqua","link":"#","sql":"select count(id) from booking"}', '2019-05-02 07:21:06', NULL),
+	(4, 1, 'f582bd1a41e68eee72530b76d56337c8', 'smallbox', 'area4', 0, NULL, '{"name":"Booking Payment","icon":"ion-cash","color":"bg-yellow","link":"#","sql":"select sum(grand_total) from booking where created_at like \'%2019%\' or updated_at like \'%2019%\'"}', '2019-05-02 07:21:07', NULL);
 /*!40000 ALTER TABLE `cms_statistic_components` ENABLE KEYS */;
 
 -- Dumping structure for table be-hotel.cms_users
