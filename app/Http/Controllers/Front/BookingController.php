@@ -19,7 +19,6 @@ class BookingController extends Controller
 	    	$q->where('max_adult','>=',$request->adult);
 	    	$q->where('max_children','>=',$request->children);
     	})->get();
-
     	$data['rooms'] = $rooms;
     	return view('front.booking.index',$data);
     }

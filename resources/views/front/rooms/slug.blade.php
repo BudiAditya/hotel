@@ -42,6 +42,7 @@
                 <li><strong>Bed Type:</strong> {{$room->bed_type}}</li>
               </ul>
               {!!$room->description!!}
+              <a href="{{url('booking-room?checkin_date='.date('Y-m-d').'&checkout_date='.date('Y-m-d',time()+86400).'&adult=1&children=0&id_room='.$room->id)}}" class="btn btn-primary py-3 px-5"> Book Room </a>
             </div>
           </div>
         </div>  

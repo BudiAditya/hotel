@@ -14,13 +14,6 @@
       </div>
     </div>
   </div>
-  <?php 
-    $rooms = \DB::table('featured_room')
-    ->select('room.*','featured_room.*')
-    ->join('room','room.id','featured_room.id_room')
-    ->orderBy('featured_room.created_at','desc')
-    ->get();
-  ?>
   <div class="container">
     @include('front.partials.form_checkin')
   </div>

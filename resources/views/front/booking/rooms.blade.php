@@ -53,6 +53,12 @@
           </div>
           <div class="col-md-6">
             <h4>Booking Details</h4>
+            <?php 
+              $ci = strtotime($data["checkin_date"]);
+              $co = strtotime($data["checkout_date"]);
+              $qty        = $co - $ci;
+              $nights = floor($qty/(60*60*24))
+            ?>
             <hr>
             <?php 
               $room = App\Models\Room::where('id',$data["id_room"])->first();
@@ -63,8 +69,8 @@
                 <input type="hidden" name="id_room" value="{{$room->id}}">
               </div>
               <div class="col-md-6">
-                <h5>Rp {{number_format($room->price,0,'.',',')}}</h5>
-                <input type="hidden" name="subtotal" value="{{$room->price}}">
+                <h5>Rp {{number_format($nights*$room->price,0,'.',',')}}</h5>
+                <input type="hidden" name="subtotal" value="{{$nights * $room->price}}">
               </div>
             </div>
             Check in : <b>{{$data["checkin_date"]}}</b> <br>
@@ -73,12 +79,7 @@
             Check out : <b>{{$data["checkout_date"]}}</b> <br>
             <input type="hidden" name="checkout_date" value="{{$data['checkout_date']}}">     
 
-            <?php 
-            $ci = strtotime($data["checkin_date"]);
-            $co = strtotime($data["checkout_date"]);
-            $qty        = $co - $ci;
-            ?>
-            <b>{{floor($qty/(60*60*24))}}</b> Nights - <b>{{$data["adult"]+$data["children"]}}</b> Person <br><br>
+            <b>{{$nights}}</b> Nights - <b>{{$data["adult"]+$data["children"]}}</b> Person <br><br>
             <input type="hidden" name="qty" value="{{floor($qty/(60*60*24))}}">     
             <input type="hidden" name="number_of_guest" value="{{$data['adult']+$data['children']}}">     
             
@@ -98,7 +99,7 @@
                 <h5>Room</h5>
               </div>
               <div class="col-md-6">
-                <h5>Rp. {{number_format($room->price,0,'.',',')}}</h5>
+                <h5>Rp. {{number_format($nights * $room->price,0,'.',',')}}</h5>
               </div>
             </div>
             <div class="row">
