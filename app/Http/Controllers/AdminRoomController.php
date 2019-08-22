@@ -65,6 +65,8 @@
 			$this->form[] = ['label'=>'Img 2','name'=>'img_2','type'=>'upload','validation'=>'required','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Img 3','name'=>'img_3','type'=>'upload','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Img 4','name'=>'img_4','type'=>'upload','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Seo Title','name'=>'seo_title','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Meta Description','name'=>'meta_description','type'=>'textarea','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -113,6 +115,7 @@
 	        | 
 	        */
 	        $this->addaction = array();
+	        $this->addaction[] = ['label'=>'Link','icon'=>'fa fa-link','color'=>'info','url'=>'../rooms'.'/[slug]'];
 
 
 	        /* 
@@ -183,7 +186,7 @@
 	        | $this->script_js = "function() { ... }";
 	        |
 	        */
-	        $this->script_js = NULL;
+	        $this->script_js = "";
 
 
             /*
@@ -294,6 +297,7 @@
 	    */
 	    public function hook_before_add(&$postdata) {        
 	        //Your code here
+	    	$postdata["slug"] = str_replace(" ","-",$postdata["slug"]);
 	    }
 
 	    /* 
@@ -324,7 +328,7 @@
 	    */
 	    public function hook_before_edit(&$postdata,$id) {        
 	        //Your code here
-
+	    	$postdata["slug"] = str_replace(" ","-",$postdata["slug"]);
 	    }
 
 	    /* 

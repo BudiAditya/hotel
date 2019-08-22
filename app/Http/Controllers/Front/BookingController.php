@@ -54,11 +54,13 @@ class BookingController extends Controller
         $booking->save();
         
         $latest2 = Booking::latest()->first();
-        foreach ($request->services as $i => $service) {
-            $bs = new BookingService;
-            $bs->id_booking = $latest2->id;
-            $bs->id_services = $request->services[$i];
-            $bs->save();
+        if(!empty($request->services)){
+            foreach ($request->services as $i => $service) {
+                $bs = new BookingService;
+                $bs->id_booking = $latest2->id;
+                $bs->id_services = $request->services[$i];
+                $bs->save();
+            }
         }
 
         return redirect(route('booking.thanks'));

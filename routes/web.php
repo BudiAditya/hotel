@@ -18,6 +18,7 @@ Route::get('/booking/thanks','Front\BookingController@thanks')->name('booking.th
 Route::get('/booking-room','Front\BookingController@bookingroom')->name('booking.room');
 Route::post('/booking-room','Front\BookingController@bookingpost')->name('booking.post');
 Route::get('/rooms','Front\RoomController@index');
+Route::get('/pages/{pages}','Front\PageController@index');
 Route::get('/rooms/{slug}','Front\RoomController@slug');
 Route::get('/services','Front\ServicesController@index');
 Route::get('/about','Front\AboutController@index');

@@ -76,13 +76,16 @@ CREATE TABLE IF NOT EXISTS `booking` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `custom_field_1` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Dumping data for table be-hotel.booking: ~2 rows (approximately)
+-- Dumping data for table be-hotel.booking: ~5 rows (approximately)
 /*!40000 ALTER TABLE `booking` DISABLE KEYS */;
 REPLACE INTO `booking` (`id`, `booking_no`, `id_room`, `check_in`, `check_out`, `qty`, `number_of_guest`, `name`, `email`, `phone_no`, `alamat`, `province`, `city`, `special_request`, `subtotal`, `services_price`, `grand_total`, `created_at`, `updated_at`, `custom_field_1`) VALUES
 	(1, '1', 1, '2019-01-19', '2019-01-20', 1, 1, 'test', 'test@test.com', '+12345678', 'alamat si test', 'DKI Jakarta', 'Kota Jakarta Barat', 'spec request', 1000000, 550000, 1550000, '2019-01-19 13:14:36', NULL, NULL),
-	(2, '322019012', 3, '2019-01-19', '2019-01-20', 1, 2, 'test', 'test@test.com', '2345678', 'alamat si test', 'DKI Jakarta', 'Kota Jakarta Barat', 'asdadas', 3000000, 300000, 3300000, '2019-01-19 13:23:06', '2019-01-19 13:38:23', NULL);
+	(2, '322019012', 3, '2019-01-19', '2019-01-20', 1, 2, 'test', 'test@test.com', '2345678', 'alamat si test', 'DKI Jakarta', 'Kota Jakarta Barat', 'asdadas', 3000000, 300000, 3300000, '2019-01-19 13:23:06', '2019-01-19 13:38:23', NULL),
+	(3, '312019053', 3, '2019-05-20', '2019-05-21', 1, 1, 'test', 'test@test.com', '081290080600', '-', '-', '-', NULL, 3000000, NULL, 3000000, '2019-05-20 04:39:16', '2019-05-20 04:39:16', NULL),
+	(4, '312019054', 3, '2019-05-20', '2019-05-21', 1, 1, 'test', 'test@test.com', '081290080600', '-', '-', '-', NULL, 3000000, NULL, 3000000, '2019-05-20 04:39:58', '2019-05-20 04:39:58', NULL),
+	(5, '312019055', 3, '2019-05-20', '2019-05-21', 1, 1, 'test', 'test@test.com', '081290080600', '-', '-', '-', NULL, 3000000, NULL, 3000000, '2019-05-20 04:40:18', '2019-05-20 04:40:18', NULL);
 /*!40000 ALTER TABLE `booking` ENABLE KEYS */;
 
 -- Dumping structure for table be-hotel.booking_services
@@ -214,9 +217,9 @@ CREATE TABLE IF NOT EXISTS `cms_logs` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table be-hotel.cms_logs: ~102 rows (approximately)
+-- Dumping data for table be-hotel.cms_logs: ~108 rows (approximately)
 /*!40000 ALTER TABLE `cms_logs` DISABLE KEYS */;
 REPLACE INTO `cms_logs` (`id`, `ipaddress`, `useragent`, `url`, `description`, `details`, `id_cms_users`, `created_at`, `updated_at`) VALUES
 	(1, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36', 'http://127.0.0.1:8000/admin/login', 'admin@crudbooster.com login with IP Address 127.0.0.1', '', 1, '2019-01-12 15:32:29', NULL),
@@ -327,7 +330,21 @@ REPLACE INTO `cms_logs` (`id`, `ipaddress`, `useragent`, `url`, `description`, `
 	(106, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://127.0.0.1:8000/admin/login', 'admin@admin.com login with IP Address 127.0.0.1', '', 1, '2019-05-02 07:19:32', NULL),
 	(107, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://127.0.0.1:8000/admin/statistic_builder/add-save', 'Add New Data Dashboard at Statistic Builder', '', 1, '2019-05-02 07:19:46', NULL),
 	(108, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://127.0.0.1:8000/admin/menu_management/add-save', 'Add New Data Dashboard at Menu Management', '', 1, '2019-05-02 07:33:08', NULL),
-	(109, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://127.0.0.1:8000/admin/logout', 'admin@admin.com logout', '', 1, '2019-05-02 07:44:11', NULL);
+	(109, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://127.0.0.1:8000/admin/logout', 'admin@admin.com logout', '', 1, '2019-05-02 07:44:11', NULL),
+	(110, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://127.0.0.1:8000/admin/login', 'admin@admin.com login with IP Address 127.0.0.1', '', 1, '2019-05-02 07:46:07', NULL),
+	(111, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://localhost/be-hotel/public/admin/login', 'admin@admin.com login with IP Address ::1', '', 1, '2019-05-04 07:36:12', NULL),
+	(112, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://localhost/be-hotel/public/admin/menu_management/delete/22', 'Delete data Dashboard at Menu Management', '', 1, '2019-05-04 07:40:43', NULL),
+	(113, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://localhost/be-hotel/public/admin/menu_management/add-save', 'Add New Data Dashboard at Menu Management', '', 1, '2019-05-04 07:41:38', NULL),
+	(114, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://localhost/be-hotel/public/admin/menu_management/edit-save/23', 'Update data Dashboard at Menu Management', '<table class="table table-striped"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>parent_id</td><td>0</td><td></td></tr><tr><td>is_dashboard</td><td>0</td><td>1</td></tr><tr><td>sorting</td><td></td><td></td></tr></tbody></table>', 1, '2019-05-04 07:41:52', NULL),
+	(115, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://127.0.0.1:8000/admin/login', 'admin@admin.com login with IP Address 127.0.0.1', '', 1, '2019-05-04 07:52:39', NULL),
+	(116, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', 'http://127.0.0.1:8000/admin/menu_management/edit-save/24', 'Update data Dashboard at Menu Management', '<table class="table table-striped"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>color</td><td></td><td>normal</td></tr><tr><td>parent_id</td><td>0</td><td></td></tr><tr><td>is_dashboard</td><td>0</td><td>1</td></tr><tr><td>sorting</td><td>9</td><td></td></tr></tbody></table>', 1, '2019-05-04 07:53:03', NULL),
+	(117, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36', 'http://127.0.0.1:8000/admin/login', 'admin@admin.com login with IP Address 127.0.0.1', '', 1, '2019-05-20 03:55:30', NULL),
+	(118, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36', 'http://127.0.0.1:8000/admin/room/edit-save/3', 'Update data VIP Room at Room', '<table class="table table-striped"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody></tbody></table>', 1, '2019-05-20 04:29:15', NULL),
+	(119, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36', 'http://127.0.0.1:8000/admin/page/add-save', 'Add New Data Page 1 at Page', '', 1, '2019-05-20 04:36:12', NULL),
+	(120, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36', 'http://127.0.0.1:8000/admin/page/edit-save/1', 'Update data Page 1 at Page', '<table class="table table-striped"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>posted_by</td><td></td><td></td></tr><tr><td>feature_image</td><td></td><td>uploads/1/2019-05/bg_2.jpg</td></tr></tbody></table>', 1, '2019-05-20 04:54:41', NULL),
+	(121, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36', 'http://127.0.0.1:8000/admin/settings/add-save', 'Add New Data seo_title at Settings', '', 1, '2019-05-20 05:01:59', NULL),
+	(122, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36', 'http://127.0.0.1:8000/admin/settings/add-save', 'Add New Data meta_description at Settings', '', 1, '2019-05-20 05:02:18', NULL),
+	(123, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36', 'http://127.0.0.1:8000/admin/post/edit-save/100', 'Update data Illo voluptatem. at Post', '<table class="table table-striped"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>feature_image</td><td>https://lorempixel.com/640/480/?94959</td><td></td></tr><tr><td>posted_by</td><td>Super Admin</td><td></td></tr></tbody></table>', 1, '2019-05-20 05:09:36', NULL);
 /*!40000 ALTER TABLE `cms_logs` ENABLE KEYS */;
 
 -- Dumping structure for table be-hotel.cms_menus
@@ -346,7 +363,7 @@ CREATE TABLE IF NOT EXISTS `cms_menus` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table be-hotel.cms_menus: ~20 rows (approximately)
 /*!40000 ALTER TABLE `cms_menus` DISABLE KEYS */;
@@ -371,7 +388,7 @@ REPLACE INTO `cms_menus` (`id`, `name`, `type`, `path`, `color`, `icon`, `parent
 	(19, 'Restaurant Menu', 'Route', 'AdminRestaurantMenuControllerGetIndex', NULL, 'fa fa-cutlery', 16, 1, 0, 1, 5, '2019-01-15 07:20:47', NULL),
 	(20, 'Jumbotron', 'Route', 'AdminJumbotronControllerGetIndex', NULL, 'fa fa-th', 16, 1, 0, 1, 6, '2019-01-15 07:43:55', NULL),
 	(21, 'About Us', 'Route', 'AdminAboutControllerGetIndex', NULL, 'fa fa-info-circle', 16, 1, 0, 1, 1, '2019-01-15 10:02:42', NULL),
-	(22, 'Dashboard', 'Statistic', 'statistic_builder/show/dashboard', 'normal', 'fa fa-tachometer', 0, 1, 1, 1, NULL, '2019-05-02 07:33:08', NULL);
+	(24, 'Dashboard', 'Route', 'AdminDashboardControllerGetIndex', 'normal', 'fa fa-tachometer', 0, 1, 1, 1, 9, '2019-05-04 07:46:04', '2019-05-04 07:53:03');
 /*!40000 ALTER TABLE `cms_menus` ENABLE KEYS */;
 
 -- Dumping structure for table be-hotel.cms_menus_privileges
@@ -380,9 +397,9 @@ CREATE TABLE IF NOT EXISTS `cms_menus_privileges` (
   `id_cms_menus` int(11) DEFAULT NULL,
   `id_cms_privileges` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table be-hotel.cms_menus_privileges: ~21 rows (approximately)
+-- Dumping data for table be-hotel.cms_menus_privileges: ~23 rows (approximately)
 /*!40000 ALTER TABLE `cms_menus_privileges` DISABLE KEYS */;
 REPLACE INTO `cms_menus_privileges` (`id`, `id_cms_menus`, `id_cms_privileges`) VALUES
 	(1, 1, 1),
@@ -406,7 +423,9 @@ REPLACE INTO `cms_menus_privileges` (`id`, `id_cms_menus`, `id_cms_privileges`) 
 	(22, 19, 1),
 	(23, 20, 1),
 	(24, 21, 1),
-	(25, 22, 1);
+	(25, 22, 1),
+	(27, 23, 1),
+	(29, 24, 1);
 /*!40000 ALTER TABLE `cms_menus_privileges` ENABLE KEYS */;
 
 -- Dumping structure for table be-hotel.cms_moduls
@@ -423,7 +442,7 @@ CREATE TABLE IF NOT EXISTS `cms_moduls` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table be-hotel.cms_moduls: ~29 rows (approximately)
 /*!40000 ALTER TABLE `cms_moduls` DISABLE KEYS */;
@@ -456,7 +475,8 @@ REPLACE INTO `cms_moduls` (`id`, `name`, `icon`, `path`, `table_name`, `controll
 	(26, 'Featured Room', 'fa fa-home', 'featured_room', 'featured_room', 'AdminFeaturedRoomController', 0, 0, '2019-01-15 05:31:29', NULL, NULL),
 	(27, 'Restaurant Menu', 'fa fa-cutlery', 'restaurant_menu', 'restaurant_menu', 'AdminRestaurantMenuController', 0, 0, '2019-01-15 07:20:46', NULL, NULL),
 	(28, 'Jumbotron', 'fa fa-th', 'jumbotron', 'jumbotron', 'AdminJumbotronController', 0, 0, '2019-01-15 07:43:53', NULL, NULL),
-	(29, 'About Us', 'fa fa-info-circle', 'about', 'about', 'AdminAboutController', 0, 0, '2019-01-15 10:02:41', NULL, NULL);
+	(29, 'About Us', 'fa fa-info-circle', 'about', 'about', 'AdminAboutController', 0, 0, '2019-01-15 10:02:41', NULL, NULL),
+	(30, 'Dashboard', 'fa fa-tachometer', 'dashboard', 'dashboard', 'AdminDashboardController', 0, 0, '2019-05-04 07:46:04', NULL, NULL);
 /*!40000 ALTER TABLE `cms_moduls` ENABLE KEYS */;
 
 -- Dumping structure for table be-hotel.cms_notifications
@@ -505,7 +525,7 @@ CREATE TABLE IF NOT EXISTS `cms_privileges_roles` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table be-hotel.cms_privileges_roles: ~29 rows (approximately)
 /*!40000 ALTER TABLE `cms_privileges_roles` DISABLE KEYS */;
@@ -538,7 +558,8 @@ REPLACE INTO `cms_privileges_roles` (`id`, `is_visible`, `is_create`, `is_read`,
 	(26, 1, 1, 1, 1, 1, 1, 26, NULL, NULL),
 	(27, 1, 1, 1, 1, 1, 1, 27, NULL, NULL),
 	(28, 1, 1, 1, 1, 1, 1, 28, NULL, NULL),
-	(29, 1, 1, 1, 1, 1, 1, 29, NULL, NULL);
+	(29, 1, 1, 1, 1, 1, 1, 29, NULL, NULL),
+	(30, 1, 1, 1, 1, 1, 1, 30, NULL, NULL);
 /*!40000 ALTER TABLE `cms_privileges_roles` ENABLE KEYS */;
 
 -- Dumping structure for table be-hotel.cms_settings
@@ -554,9 +575,9 @@ CREATE TABLE IF NOT EXISTS `cms_settings` (
   `group_setting` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `label` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table be-hotel.cms_settings: ~26 rows (approximately)
+-- Dumping data for table be-hotel.cms_settings: ~28 rows (approximately)
 /*!40000 ALTER TABLE `cms_settings` DISABLE KEYS */;
 REPLACE INTO `cms_settings` (`id`, `name`, `content`, `content_input_type`, `dataenum`, `helper`, `created_at`, `updated_at`, `group_setting`, `label`) VALUES
 	(1, 'login_background_color', NULL, 'text', NULL, 'Input hexacode', '2018-12-09 14:56:32', NULL, 'Login Register Style', 'Login Background Color'),
@@ -584,7 +605,9 @@ REPLACE INTO `cms_settings` (`id`, `name`, `content`, `content_input_type`, `dat
 	(23, 'instagram', '#', 'text', NULL, NULL, '2018-12-21 11:06:51', NULL, 'Application Setting', 'Instagram'),
 	(24, 'youtube', '#', 'text', NULL, NULL, '2018-12-21 11:06:57', NULL, 'Application Setting', 'Youtube'),
 	(25, 'twitter', '#', 'text', NULL, NULL, '2018-12-21 11:07:28', NULL, 'Application Setting', 'Twitter'),
-	(26, 'footer', 'Copyright © 2018 arbipram.web.id. All Rights Reserved.', 'text', NULL, 'example : Copyright © 2018. All Rights Reserved', '2018-12-21 15:05:26', NULL, 'Application Setting', 'Footer');
+	(26, 'footer', 'Copyright © 2018 arbipram.web.id. All Rights Reserved.', 'text', NULL, 'example : Copyright © 2018. All Rights Reserved', '2018-12-21 15:05:26', NULL, 'Application Setting', 'Footer'),
+	(27, 'seo_title', 'SEO Title', 'text', NULL, 'SEO Title', '2019-05-20 05:01:59', NULL, 'Application Setting', 'SEO Title'),
+	(28, 'meta_description', 'Meta Description Website', 'text', NULL, 'Meta Description', '2019-05-20 05:02:18', NULL, 'Application Setting', 'Meta Description');
 /*!40000 ALTER TABLE `cms_settings` ENABLE KEYS */;
 
 -- Dumping structure for table be-hotel.cms_statistics
@@ -616,15 +639,16 @@ CREATE TABLE IF NOT EXISTS `cms_statistic_components` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table be-hotel.cms_statistic_components: ~0 rows (approximately)
+-- Dumping data for table be-hotel.cms_statistic_components: ~5 rows (approximately)
 /*!40000 ALTER TABLE `cms_statistic_components` DISABLE KEYS */;
 REPLACE INTO `cms_statistic_components` (`id`, `id_cms_statistics`, `componentID`, `component_name`, `area_name`, `sorting`, `name`, `config`, `created_at`, `updated_at`) VALUES
 	(1, 1, '0ac605fc6c699c75becebc23e5ace0d1', 'smallbox', 'area1', 0, NULL, '{"name":"Users","icon":"ion-person","color":"bg-green","link":"#","sql":"Select count(id) from cms_users"}', '2019-05-02 07:21:03', NULL),
 	(2, 1, '9d407f0d3ab464e05111f6a7fe90b84c', 'smallbox', 'area2', 0, NULL, '{"name":"Rooms","icon":"ion-home","color":"bg-green","link":"#","sql":"select count(id) from room"}', '2019-05-02 07:21:05', NULL),
 	(3, 1, '448b7e637e7344fe2878377dab7a6d0a', 'smallbox', 'area3', 0, NULL, '{"name":"Bookings","icon":"ion-calendar","color":"bg-aqua","link":"#","sql":"select count(id) from booking"}', '2019-05-02 07:21:06', NULL),
-	(4, 1, 'f582bd1a41e68eee72530b76d56337c8', 'smallbox', 'area4', 0, NULL, '{"name":"Booking Payment","icon":"ion-cash","color":"bg-yellow","link":"#","sql":"select sum(grand_total) from booking where created_at like \'%2019%\' or updated_at like \'%2019%\'"}', '2019-05-02 07:21:07', NULL);
+	(4, 1, 'f582bd1a41e68eee72530b76d56337c8', 'smallbox', 'area4', 0, NULL, '{"name":"Booking Payment","icon":"ion-cash","color":"bg-yellow","link":"#","sql":"select sum(grand_total) from booking where created_at like \'%2019%\' or updated_at like \'%2019%\'"}', '2019-05-02 07:21:07', NULL),
+	(5, 1, '2dfdc13738e868f5b9e78a4b0046bdfd', 'table', 'area5', 0, NULL, '{"name":"Latest Booking","sql":"select booking_no, id_room, check_in, check_out, name, phone_no, email from booking order by created_at ASC limit 10 "}', '2019-05-02 07:46:59', NULL);
 /*!40000 ALTER TABLE `cms_statistic_components` ENABLE KEYS */;
 
 -- Dumping structure for table be-hotel.cms_users
@@ -665,6 +689,18 @@ REPLACE INTO `contact` (`id`, `subject`, `name`, `email`, `message`, `created_at
 	(1, 'Test subject', 'test', 'test@test.com', 'Message ...', '2019-01-15', '2019-01-15'),
 	(2, 'Test subject', 'test', 'test@test.com', 'Message ...', '2019-01-15', '2019-01-15');
 /*!40000 ALTER TABLE `contact` ENABLE KEYS */;
+
+-- Dumping structure for table be-hotel.dashboard
+CREATE TABLE IF NOT EXISTS `dashboard` (
+  `id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table be-hotel.dashboard: ~0 rows (approximately)
+/*!40000 ALTER TABLE `dashboard` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dashboard` ENABLE KEYS */;
 
 -- Dumping structure for table be-hotel.facilities
 CREATE TABLE IF NOT EXISTS `facilities` (
@@ -803,11 +839,16 @@ CREATE TABLE IF NOT EXISTS `page` (
   `created_at` date DEFAULT NULL,
   `updated_at` date DEFAULT NULL,
   `posted_by` varchar(255) DEFAULT NULL,
+  `seo_title` text,
+  `meta_description` text,
+  `feature_image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table be-hotel.page: ~0 rows (approximately)
+-- Dumping data for table be-hotel.page: ~1 rows (approximately)
 /*!40000 ALTER TABLE `page` DISABLE KEYS */;
+REPLACE INTO `page` (`id`, `title`, `slug`, `content`, `created_at`, `updated_at`, `posted_by`, `seo_title`, `meta_description`, `feature_image`) VALUES
+	(1, 'Page 1', 'page-1', '<p>lomer??</p>', '2019-05-20', '2019-05-20', NULL, 'page 1', '<p>meta desc</p>', 'uploads/1/2019-05/bg_2.jpg');
 /*!40000 ALTER TABLE `page` ENABLE KEYS */;
 
 -- Dumping structure for table be-hotel.post
@@ -821,83 +862,85 @@ CREATE TABLE IF NOT EXISTS `post` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `posted_by` varchar(255) DEFAULT NULL,
+  `seo_title` varchar(255) DEFAULT NULL,
+  `meta_description` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table be-hotel.post: ~71 rows (approximately)
 /*!40000 ALTER TABLE `post` DISABLE KEYS */;
-REPLACE INTO `post` (`id`, `title`, `slug`, `id_post_category`, `content`, `feature_image`, `created_at`, `updated_at`, `posted_by`) VALUES
-	(1, 'Dolores et rem.', 'Fugiat.', 2, 'Repellat consequatur quos ipsam fugiat sint voluptatibus sunt.', 'https://lorempixel.com/640/480/?22485', '2019-01-15 15:40:55', '2019-01-15 15:40:55', 'Super Admin'),
-	(2, 'Vitae dolorem.', 'Ut.', 2, 'Consequatur laboriosam dolore magnam ut eaque facilis.', 'https://lorempixel.com/640/480/?66742', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(3, 'Laborum odit.', 'Hicut.', 3, 'Exercitationem et blanditiis temporibus.', 'https://lorempixel.com/640/480/?40038', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(4, 'Velit porro eaque.', 'Estillo.', 3, 'Architecto ut tenetur voluptatum ut ut.', 'https://lorempixel.com/640/480/?50545', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(5, 'Et inventore illum.', 'Eum.', 3, 'Veritatis voluptatibus sunt sit dolorum.', 'https://lorempixel.com/640/480/?60187', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(6, 'Et voluptatibus.', 'Autem.', 2, 'Maiores consectetur reiciendis quod esse dolor veritatis maiores.', 'https://lorempixel.com/640/480/?36609', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(7, 'Qui facere.', 'Dolor.', 1, 'Molestiae dolorem repudiandae fuga ad sed.', 'https://lorempixel.com/640/480/?17842', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(8, 'Dolorum quis.', 'Blanditiis.', 2, 'Quibusdam dolor aliquid omnis perspiciatis.', 'https://lorempixel.com/640/480/?29307', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(12, 'Consequatur nihil dignissimos.', 'Ab.', 2, 'Non facilis ut voluptas a aut quisquam sed.', 'https://lorempixel.com/640/480/?44459', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(13, 'Cupiditate voluptatibus.', 'Minus.', 2, 'Sint consequuntur aspernatur iusto quia ut debitis ut.', 'https://lorempixel.com/640/480/?65318', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(15, 'Sunt placeat nulla.', 'Iusto.', 2, 'Possimus fugit esse sit molestiae dolores.', 'https://lorempixel.com/640/480/?34429', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(16, 'Quia adipisci.', 'Velit.', 1, 'Tempore ipsum eum inventore magni et perspiciatis sit.', 'https://lorempixel.com/640/480/?38620', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(17, 'Porro aut.', 'Consectetur.', 1, 'Aperiam eveniet et nobis autem quisquam qui enim.', 'https://lorempixel.com/640/480/?16462', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(18, 'Aliquam aspernatur.', 'Vel.', 1, 'Veritatis deserunt nesciunt ut sint debitis expedita in dolores.', 'https://lorempixel.com/640/480/?47036', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(19, 'Voluptas eaque quae.', 'Utquam.', 3, 'Consectetur ut rerum aut.', 'https://lorempixel.com/640/480/?18537', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(21, 'Libero quidem minima.', 'Explicabo.', 1, 'Atque expedita corrupti illum doloremque delectus dicta qui.', 'https://lorempixel.com/640/480/?51739', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(24, 'Amet eum neque.', 'Tempore.', 1, 'Fugiat culpa similique qui eos.', 'https://lorempixel.com/640/480/?83719', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(25, 'Fugiat voluptatum assumenda.', 'In.', 1, 'Id veritatis ipsum vero sed.', 'https://lorempixel.com/640/480/?61370', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(26, 'Et molestias.', 'Consequatur.', 3, 'Ad in maxime nulla non quia.', 'https://lorempixel.com/640/480/?84430', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(29, 'Corrupti nemo sapiente.', 'Exercitationem.', 2, 'Deleniti repellat cum sed id voluptatem.', 'https://lorempixel.com/640/480/?29112', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(32, 'Minima dolor eum.', 'Molestias.', 3, 'Eius accusamus molestias vel libero.', 'https://lorempixel.com/640/480/?18397', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(36, 'Assumenda qui.', 'Eligendi.', 3, 'Laboriosam velit ipsum voluptatibus libero sit quia deleniti.', 'https://lorempixel.com/640/480/?20249', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(37, 'Magni dolorem nostrum.', 'Et.', 2, 'Nostrum harum non libero.', 'https://lorempixel.com/640/480/?70134', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(38, 'Qui impedit sequi.', 'Quotempora.', 2, 'Molestias deleniti quod qui recusandae eius quo et.', 'https://lorempixel.com/640/480/?62412', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(39, 'Sint dolores.', 'Dolordoloribus.', 1, 'Nisi ipsa voluptas in illum quos atque.', 'https://lorempixel.com/640/480/?98707', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(40, 'Illum unde eos.', 'Etenim.', 3, 'Dolore nostrum ratione iste.', 'https://lorempixel.com/640/480/?62585', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(41, 'Eum eligendi.', 'Sunt.', 1, 'Ipsam est et sit aut deserunt.', 'https://lorempixel.com/640/480/?12061', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(42, 'Quia placeat quis.', 'Distinctio.', 1, 'Unde sed itaque odit ea qui.', 'https://lorempixel.com/640/480/?93579', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(43, 'Autem nulla repellendus.', 'Nulla.', 2, 'Cumque et et fugit veritatis.', 'https://lorempixel.com/640/480/?86609', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(44, 'Nobis porro.', 'Consequatur.', 2, 'Non illo aspernatur vel qui quidem aut.', 'https://lorempixel.com/640/480/?14832', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(45, 'Qui laboriosam.', 'Sintest.', 1, 'Quis quae eveniet architecto quaerat.', 'https://lorempixel.com/640/480/?94449', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(46, 'Deleniti aperiam.', 'Numquam.', 3, 'Minima sit ut quas fuga repellendus sunt.', 'https://lorempixel.com/640/480/?88652', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(48, 'Fuga et.', 'Voluptates.', 2, 'Consequatur tempore est cum dolor ratione occaecati molestiae.', 'https://lorempixel.com/640/480/?44999', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(49, 'Nihil alias.', 'Corrupti.', 3, 'Eligendi natus ipsa dolorem sed et suscipit ea.', 'https://lorempixel.com/640/480/?44534', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(50, 'Et ex.', 'Voluptas.', 2, 'Nihil quaerat dicta harum rem rerum aperiam.', 'https://lorempixel.com/640/480/?60444', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(51, 'Laudantium suscipit nulla.', 'Deserunt.', 2, 'Ea cupiditate voluptate voluptatem error.', 'https://lorempixel.com/640/480/?19613', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(52, 'Ut deserunt illum.', 'Minimaeum.', 2, 'Qui explicabo dolorum accusantium illo.', 'https://lorempixel.com/640/480/?67367', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(53, 'Fugit odio.', 'Harum.', 3, 'Saepe neque accusamus aut.', 'https://lorempixel.com/640/480/?27915', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(55, 'Cupiditate eos.', 'Culpaeligendi.', 3, 'Culpa consequatur necessitatibus enim.', 'https://lorempixel.com/640/480/?56387', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(57, 'Dolore a.', 'Et.', 2, 'Libero quidem sit ipsa consequatur molestiae.', 'https://lorempixel.com/640/480/?44605', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(58, 'Eaque nesciunt.', 'Omnisquia.', 1, 'Laudantium voluptas blanditiis quam eius.', 'https://lorempixel.com/640/480/?61809', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(59, 'Tempora aut occaecati.', 'Istemaxime.', 3, 'Accusantium recusandae assumenda ipsam cum minima illo nesciunt.', 'https://lorempixel.com/640/480/?72174', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(61, 'Cumque animi distinctio.', 'Velit.', 1, 'Ut illum praesentium fugiat possimus voluptas deserunt debitis.', 'https://lorempixel.com/640/480/?41304', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(62, 'Fugit esse.', 'Fugit.', 1, 'Omnis sed velit quas harum quos et.', 'https://lorempixel.com/640/480/?79609', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(63, 'Omnis rerum.', 'Est.', 3, 'Voluptatibus similique mollitia ea necessitatibus nam id.', 'https://lorempixel.com/640/480/?84011', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(64, 'Natus et.', 'Voluptatesexplicabo.', 3, 'Dolor hic neque dolorem illo minima quas necessitatibus.', 'https://lorempixel.com/640/480/?85660', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(65, 'Eligendi voluptatem beatae.', 'Porro.', 2, 'Dicta ab asperiores non.', 'https://lorempixel.com/640/480/?28343', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(66, 'Ea error.', 'Ex.', 3, 'Hic similique mollitia magni veritatis.', 'https://lorempixel.com/640/480/?18996', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(69, 'Nam aspernatur omnis.', 'Qui.', 2, 'Autem rerum harum provident sunt quia voluptatem voluptas.', 'https://lorempixel.com/640/480/?29316', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(70, 'Sunt sit.', 'Voluptatem.', 2, 'Earum consectetur eius voluptas in numquam necessitatibus.', 'https://lorempixel.com/640/480/?65295', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(75, 'Amet autem explicabo.', 'Perferendis.', 3, 'Quam sed aut enim architecto exercitationem voluptatum architecto maiores.', 'https://lorempixel.com/640/480/?26349', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(77, 'Mollitia expedita nemo.', 'Voluptatum.', 2, 'Sed veritatis sed ducimus iusto.', 'https://lorempixel.com/640/480/?95590', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(78, 'Numquam nesciunt velit.', 'Dicta.', 3, 'Et dolor voluptas voluptatem.', 'https://lorempixel.com/640/480/?92174', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(79, 'Est quia.', 'Magnam.', 3, 'Quisquam ut commodi est ratione enim.', 'https://lorempixel.com/640/480/?76881', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(80, 'Non aliquid.', 'Quia.', 2, 'Sit exercitationem esse et omnis aut.', 'https://lorempixel.com/640/480/?79792', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(81, 'Atque cumque blanditiis.', 'Quodsint.', 1, 'Aliquid omnis nihil vel sunt sunt doloremque nihil.', 'https://lorempixel.com/640/480/?21631', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(82, 'Amet sit et.', 'Quiaperspiciatis.', 3, 'Ipsam veniam ad sed nostrum ut nihil.', 'https://lorempixel.com/640/480/?56735', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(83, 'Necessitatibus quasi laudantium.', 'Quidemcorrupti.', 1, 'Iure autem dolores delectus explicabo consequuntur ut.', 'https://lorempixel.com/640/480/?39089', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(85, 'Beatae iure non.', 'Ducimus.', 1, 'Labore quia atque quisquam nemo architecto aut.', 'https://lorempixel.com/640/480/?60295', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(87, 'Iste laborum repudiandae.', 'Aut.', 2, 'Sunt alias tempore dolorem illo recusandae.', 'https://lorempixel.com/640/480/?98284', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(88, 'Voluptatem porro atque.', 'Dolore.', 1, 'Minus eius ex non dolor.', 'https://lorempixel.com/640/480/?21083', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(89, 'Dolorum id id.', 'Quia.', 1, 'Possimus sequi amet accusantium ipsam iusto.', 'https://lorempixel.com/640/480/?35605', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(90, 'Vero similique.', 'Inciduntnam.', 3, 'Cum praesentium consequatur provident deleniti dignissimos doloribus.', 'https://lorempixel.com/640/480/?33426', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(91, 'Est et dolorem.', 'Est.', 1, 'Adipisci vel quae quia delectus sequi.', 'https://lorempixel.com/640/480/?62399', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(92, 'Iure accusamus reiciendis.', 'Quaeratquam.', 2, 'Minus dolores doloribus non ea.', 'https://lorempixel.com/640/480/?44003', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(93, 'Laborum id natus.', 'Iste.', 1, 'Consequuntur reiciendis dignissimos nesciunt voluptatem voluptatem ut.', 'https://lorempixel.com/640/480/?76140', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(94, 'Expedita qui.', 'Non.', 2, 'Autem et in perferendis aspernatur.', 'https://lorempixel.com/640/480/?87375', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(95, 'Aliquid dolor in.', 'Sit.', 3, 'Temporibus corrupti ex adipisci aliquid non itaque tempora.', 'https://lorempixel.com/640/480/?45391', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(98, 'Eum quia autem.', 'Quiacum.', 3, 'Sit odit eum quam.', 'https://lorempixel.com/640/480/?61678', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(99, 'Alias quas incidunt.', 'Similique.', 3, 'Eveniet odio perspiciatis repellat error iusto laborum itaque.', 'https://lorempixel.com/640/480/?77177', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin'),
-	(100, 'Illo voluptatem.', 'Commodi.', 2, 'Voluptatem vitae in est id facere voluptatem.', 'https://lorempixel.com/640/480/?94959', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin');
+REPLACE INTO `post` (`id`, `title`, `slug`, `id_post_category`, `content`, `feature_image`, `created_at`, `updated_at`, `posted_by`, `seo_title`, `meta_description`) VALUES
+	(1, 'Dolores et rem.', 'Fugiat.', 2, 'Repellat consequatur quos ipsam fugiat sint voluptatibus sunt.', 'https://lorempixel.com/640/480/?22485', '2019-01-15 15:40:55', '2019-01-15 15:40:55', 'Super Admin', NULL, NULL),
+	(2, 'Vitae dolorem.', 'Ut.', 2, 'Consequatur laboriosam dolore magnam ut eaque facilis.', 'https://lorempixel.com/640/480/?66742', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(3, 'Laborum odit.', 'Hicut.', 3, 'Exercitationem et blanditiis temporibus.', 'https://lorempixel.com/640/480/?40038', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(4, 'Velit porro eaque.', 'Estillo.', 3, 'Architecto ut tenetur voluptatum ut ut.', 'https://lorempixel.com/640/480/?50545', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(5, 'Et inventore illum.', 'Eum.', 3, 'Veritatis voluptatibus sunt sit dolorum.', 'https://lorempixel.com/640/480/?60187', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(6, 'Et voluptatibus.', 'Autem.', 2, 'Maiores consectetur reiciendis quod esse dolor veritatis maiores.', 'https://lorempixel.com/640/480/?36609', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(7, 'Qui facere.', 'Dolor.', 1, 'Molestiae dolorem repudiandae fuga ad sed.', 'https://lorempixel.com/640/480/?17842', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(8, 'Dolorum quis.', 'Blanditiis.', 2, 'Quibusdam dolor aliquid omnis perspiciatis.', 'https://lorempixel.com/640/480/?29307', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(12, 'Consequatur nihil dignissimos.', 'Ab.', 2, 'Non facilis ut voluptas a aut quisquam sed.', 'https://lorempixel.com/640/480/?44459', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(13, 'Cupiditate voluptatibus.', 'Minus.', 2, 'Sint consequuntur aspernatur iusto quia ut debitis ut.', 'https://lorempixel.com/640/480/?65318', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(15, 'Sunt placeat nulla.', 'Iusto.', 2, 'Possimus fugit esse sit molestiae dolores.', 'https://lorempixel.com/640/480/?34429', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(16, 'Quia adipisci.', 'Velit.', 1, 'Tempore ipsum eum inventore magni et perspiciatis sit.', 'https://lorempixel.com/640/480/?38620', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(17, 'Porro aut.', 'Consectetur.', 1, 'Aperiam eveniet et nobis autem quisquam qui enim.', 'https://lorempixel.com/640/480/?16462', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(18, 'Aliquam aspernatur.', 'Vel.', 1, 'Veritatis deserunt nesciunt ut sint debitis expedita in dolores.', 'https://lorempixel.com/640/480/?47036', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(19, 'Voluptas eaque quae.', 'Utquam.', 3, 'Consectetur ut rerum aut.', 'https://lorempixel.com/640/480/?18537', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(21, 'Libero quidem minima.', 'Explicabo.', 1, 'Atque expedita corrupti illum doloremque delectus dicta qui.', 'https://lorempixel.com/640/480/?51739', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(24, 'Amet eum neque.', 'Tempore.', 1, 'Fugiat culpa similique qui eos.', 'https://lorempixel.com/640/480/?83719', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(25, 'Fugiat voluptatum assumenda.', 'In.', 1, 'Id veritatis ipsum vero sed.', 'https://lorempixel.com/640/480/?61370', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(26, 'Et molestias.', 'Consequatur.', 3, 'Ad in maxime nulla non quia.', 'https://lorempixel.com/640/480/?84430', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(29, 'Corrupti nemo sapiente.', 'Exercitationem.', 2, 'Deleniti repellat cum sed id voluptatem.', 'https://lorempixel.com/640/480/?29112', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(32, 'Minima dolor eum.', 'Molestias.', 3, 'Eius accusamus molestias vel libero.', 'https://lorempixel.com/640/480/?18397', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(36, 'Assumenda qui.', 'Eligendi.', 3, 'Laboriosam velit ipsum voluptatibus libero sit quia deleniti.', 'https://lorempixel.com/640/480/?20249', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(37, 'Magni dolorem nostrum.', 'Et.', 2, 'Nostrum harum non libero.', 'https://lorempixel.com/640/480/?70134', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(38, 'Qui impedit sequi.', 'Quotempora.', 2, 'Molestias deleniti quod qui recusandae eius quo et.', 'https://lorempixel.com/640/480/?62412', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(39, 'Sint dolores.', 'Dolordoloribus.', 1, 'Nisi ipsa voluptas in illum quos atque.', 'https://lorempixel.com/640/480/?98707', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(40, 'Illum unde eos.', 'Etenim.', 3, 'Dolore nostrum ratione iste.', 'https://lorempixel.com/640/480/?62585', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(41, 'Eum eligendi.', 'Sunt.', 1, 'Ipsam est et sit aut deserunt.', 'https://lorempixel.com/640/480/?12061', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(42, 'Quia placeat quis.', 'Distinctio.', 1, 'Unde sed itaque odit ea qui.', 'https://lorempixel.com/640/480/?93579', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(43, 'Autem nulla repellendus.', 'Nulla.', 2, 'Cumque et et fugit veritatis.', 'https://lorempixel.com/640/480/?86609', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(44, 'Nobis porro.', 'Consequatur.', 2, 'Non illo aspernatur vel qui quidem aut.', 'https://lorempixel.com/640/480/?14832', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(45, 'Qui laboriosam.', 'Sintest.', 1, 'Quis quae eveniet architecto quaerat.', 'https://lorempixel.com/640/480/?94449', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(46, 'Deleniti aperiam.', 'Numquam.', 3, 'Minima sit ut quas fuga repellendus sunt.', 'https://lorempixel.com/640/480/?88652', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(48, 'Fuga et.', 'Voluptates.', 2, 'Consequatur tempore est cum dolor ratione occaecati molestiae.', 'https://lorempixel.com/640/480/?44999', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(49, 'Nihil alias.', 'Corrupti.', 3, 'Eligendi natus ipsa dolorem sed et suscipit ea.', 'https://lorempixel.com/640/480/?44534', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(50, 'Et ex.', 'Voluptas.', 2, 'Nihil quaerat dicta harum rem rerum aperiam.', 'https://lorempixel.com/640/480/?60444', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(51, 'Laudantium suscipit nulla.', 'Deserunt.', 2, 'Ea cupiditate voluptate voluptatem error.', 'https://lorempixel.com/640/480/?19613', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(52, 'Ut deserunt illum.', 'Minimaeum.', 2, 'Qui explicabo dolorum accusantium illo.', 'https://lorempixel.com/640/480/?67367', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(53, 'Fugit odio.', 'Harum.', 3, 'Saepe neque accusamus aut.', 'https://lorempixel.com/640/480/?27915', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(55, 'Cupiditate eos.', 'Culpaeligendi.', 3, 'Culpa consequatur necessitatibus enim.', 'https://lorempixel.com/640/480/?56387', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(57, 'Dolore a.', 'Et.', 2, 'Libero quidem sit ipsa consequatur molestiae.', 'https://lorempixel.com/640/480/?44605', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(58, 'Eaque nesciunt.', 'Omnisquia.', 1, 'Laudantium voluptas blanditiis quam eius.', 'https://lorempixel.com/640/480/?61809', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(59, 'Tempora aut occaecati.', 'Istemaxime.', 3, 'Accusantium recusandae assumenda ipsam cum minima illo nesciunt.', 'https://lorempixel.com/640/480/?72174', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(61, 'Cumque animi distinctio.', 'Velit.', 1, 'Ut illum praesentium fugiat possimus voluptas deserunt debitis.', 'https://lorempixel.com/640/480/?41304', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(62, 'Fugit esse.', 'Fugit.', 1, 'Omnis sed velit quas harum quos et.', 'https://lorempixel.com/640/480/?79609', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(63, 'Omnis rerum.', 'Est.', 3, 'Voluptatibus similique mollitia ea necessitatibus nam id.', 'https://lorempixel.com/640/480/?84011', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(64, 'Natus et.', 'Voluptatesexplicabo.', 3, 'Dolor hic neque dolorem illo minima quas necessitatibus.', 'https://lorempixel.com/640/480/?85660', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(65, 'Eligendi voluptatem beatae.', 'Porro.', 2, 'Dicta ab asperiores non.', 'https://lorempixel.com/640/480/?28343', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(66, 'Ea error.', 'Ex.', 3, 'Hic similique mollitia magni veritatis.', 'https://lorempixel.com/640/480/?18996', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(69, 'Nam aspernatur omnis.', 'Qui.', 2, 'Autem rerum harum provident sunt quia voluptatem voluptas.', 'https://lorempixel.com/640/480/?29316', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(70, 'Sunt sit.', 'Voluptatem.', 2, 'Earum consectetur eius voluptas in numquam necessitatibus.', 'https://lorempixel.com/640/480/?65295', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(75, 'Amet autem explicabo.', 'Perferendis.', 3, 'Quam sed aut enim architecto exercitationem voluptatum architecto maiores.', 'https://lorempixel.com/640/480/?26349', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(77, 'Mollitia expedita nemo.', 'Voluptatum.', 2, 'Sed veritatis sed ducimus iusto.', 'https://lorempixel.com/640/480/?95590', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(78, 'Numquam nesciunt velit.', 'Dicta.', 3, 'Et dolor voluptas voluptatem.', 'https://lorempixel.com/640/480/?92174', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(79, 'Est quia.', 'Magnam.', 3, 'Quisquam ut commodi est ratione enim.', 'https://lorempixel.com/640/480/?76881', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(80, 'Non aliquid.', 'Quia.', 2, 'Sit exercitationem esse et omnis aut.', 'https://lorempixel.com/640/480/?79792', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(81, 'Atque cumque blanditiis.', 'Quodsint.', 1, 'Aliquid omnis nihil vel sunt sunt doloremque nihil.', 'https://lorempixel.com/640/480/?21631', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(82, 'Amet sit et.', 'Quiaperspiciatis.', 3, 'Ipsam veniam ad sed nostrum ut nihil.', 'https://lorempixel.com/640/480/?56735', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(83, 'Necessitatibus quasi laudantium.', 'Quidemcorrupti.', 1, 'Iure autem dolores delectus explicabo consequuntur ut.', 'https://lorempixel.com/640/480/?39089', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(85, 'Beatae iure non.', 'Ducimus.', 1, 'Labore quia atque quisquam nemo architecto aut.', 'https://lorempixel.com/640/480/?60295', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(87, 'Iste laborum repudiandae.', 'Aut.', 2, 'Sunt alias tempore dolorem illo recusandae.', 'https://lorempixel.com/640/480/?98284', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(88, 'Voluptatem porro atque.', 'Dolore.', 1, 'Minus eius ex non dolor.', 'https://lorempixel.com/640/480/?21083', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(89, 'Dolorum id id.', 'Quia.', 1, 'Possimus sequi amet accusantium ipsam iusto.', 'https://lorempixel.com/640/480/?35605', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(90, 'Vero similique.', 'Inciduntnam.', 3, 'Cum praesentium consequatur provident deleniti dignissimos doloribus.', 'https://lorempixel.com/640/480/?33426', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(91, 'Est et dolorem.', 'Est.', 1, 'Adipisci vel quae quia delectus sequi.', 'https://lorempixel.com/640/480/?62399', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(92, 'Iure accusamus reiciendis.', 'Quaeratquam.', 2, 'Minus dolores doloribus non ea.', 'https://lorempixel.com/640/480/?44003', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(93, 'Laborum id natus.', 'Iste.', 1, 'Consequuntur reiciendis dignissimos nesciunt voluptatem voluptatem ut.', 'https://lorempixel.com/640/480/?76140', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(94, 'Expedita qui.', 'Non.', 2, 'Autem et in perferendis aspernatur.', 'https://lorempixel.com/640/480/?87375', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(95, 'Aliquid dolor in.', 'Sit.', 3, 'Temporibus corrupti ex adipisci aliquid non itaque tempora.', 'https://lorempixel.com/640/480/?45391', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(98, 'Eum quia autem.', 'Quiacum.', 3, 'Sit odit eum quam.', 'https://lorempixel.com/640/480/?61678', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(99, 'Alias quas incidunt.', 'Similique.', 3, 'Eveniet odio perspiciatis repellat error iusto laborum itaque.', 'https://lorempixel.com/640/480/?77177', '2019-01-15 15:42:03', '2019-01-15 15:42:03', 'Super Admin', NULL, NULL),
+	(100, 'Illo voluptatem.', 'Commodi.', 2, 'Voluptatem vitae in est id facere voluptatem.', NULL, '2019-01-15 15:42:03', '2019-05-20 05:09:36', 'Super Admin', 'SEO Post Title', 'Meta Description POST');
 /*!40000 ALTER TABLE `post` ENABLE KEYS */;
 
 -- Dumping structure for table be-hotel.post_category
@@ -965,6 +1008,8 @@ CREATE TABLE IF NOT EXISTS `room` (
   `img_3` varchar(255) DEFAULT NULL,
   `img_4` varchar(255) DEFAULT NULL,
   `status` varchar(20) DEFAULT NULL,
+  `seo_title` text,
+  `meta_description` text,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `custom_field_1` text,
@@ -973,10 +1018,10 @@ CREATE TABLE IF NOT EXISTS `room` (
 
 -- Dumping data for table be-hotel.room: ~3 rows (approximately)
 /*!40000 ALTER TABLE `room` DISABLE KEYS */;
-REPLACE INTO `room` (`id`, `title`, `subtitle`, `slug`, `price`, `start_date`, `end_date`, `description`, `bed_type`, `max_adult`, `max_children`, `max_people`, `min_people`, `img_1`, `img_2`, `img_3`, `img_4`, `status`, `created_at`, `updated_at`, `custom_field_1`) VALUES
-	(1, 'Bachelor Room', 'subtitle', 'bachelor-room', 1000000, '2018-01-15', '2020-01-01', '<p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p><p><br></p><p>Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>', 'Single Bed', 5, 5, 5, 1, 'uploads/1/2019-01/img_1.jpg', 'uploads/1/2019-01/img_1.jpg', NULL, NULL, 'Available', '2019-01-15 06:30:21', '2019-01-15 06:32:58', NULL),
-	(2, 'Double Room', 'subtitle', 'double-room', 2000000, '2018-01-15', '2020-01-01', '<p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p><p><br></p><p>Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>', 'Single Bed', 5, 5, 5, 1, 'uploads/1/2019-01/img_2.jpg', 'uploads/1/2019-01/img_2.jpg', NULL, NULL, 'Available', '2019-01-15 06:31:31', '2019-01-15 06:32:49', NULL),
-	(3, 'VIP Room', 'subtitle', 'vip-room', 3000000, '2018-01-15', '2020-01-01', '<p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p><p><br></p><p>Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>', 'Double Bed', 5, 5, 5, 1, 'uploads/1/2019-01/img_3.jpg', 'uploads/1/2019-01/img_3.jpg', NULL, NULL, 'Available', '2019-01-15 06:32:38', NULL, NULL);
+REPLACE INTO `room` (`id`, `title`, `subtitle`, `slug`, `price`, `start_date`, `end_date`, `description`, `bed_type`, `max_adult`, `max_children`, `max_people`, `min_people`, `img_1`, `img_2`, `img_3`, `img_4`, `status`, `seo_title`, `meta_description`, `created_at`, `updated_at`, `custom_field_1`) VALUES
+	(1, 'Bachelor Room', 'subtitle', 'bachelor-room', 1000000, '2018-01-15', '2020-01-01', '<p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p><p><br></p><p>Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>', 'Single Bed', 5, 5, 5, 1, 'uploads/1/2019-01/img_1.jpg', 'uploads/1/2019-01/img_1.jpg', NULL, NULL, 'Available', NULL, NULL, '2019-01-15 06:30:21', '2019-01-15 06:32:58', NULL),
+	(2, 'Double Room', 'subtitle', 'double-room', 2000000, '2018-01-15', '2020-01-01', '<p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p><p><br></p><p>Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>', 'Single Bed', 5, 5, 5, 1, 'uploads/1/2019-01/img_2.jpg', 'uploads/1/2019-01/img_2.jpg', NULL, NULL, 'Available', NULL, NULL, '2019-01-15 06:31:31', '2019-01-15 06:32:49', NULL),
+	(3, 'VIP Room', 'subtitle', 'vip-room', 3000000, '2018-01-15', '2020-01-01', '<p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p><p><br></p><p>Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>', 'Double Bed', 5, 5, 5, 1, 'uploads/1/2019-01/img_3.jpg', 'uploads/1/2019-01/img_3.jpg', NULL, NULL, 'Available', 'VIP Room', 'Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.', '2019-01-15 06:32:38', '2019-05-20 04:29:15', NULL);
 /*!40000 ALTER TABLE `room` ENABLE KEYS */;
 
 -- Dumping structure for table be-hotel.room_facilities

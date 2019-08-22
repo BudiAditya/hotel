@@ -33,7 +33,6 @@
 			$this->col[] = ["label"=>"Title","name"=>"title"];
 			$this->col[] = ["label"=>"Slug","name"=>"slug"];
 			$this->col[] = ["label"=>"Content","name"=>"content"];
-			$this->col[] = ["label"=>"Posted By","name"=>"posted_by"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -41,6 +40,10 @@
 			$this->form[] = ['label'=>'Title','name'=>'title','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
 			$this->form[] = ['label'=>'Slug','name'=>'slug','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Content','name'=>'content','type'=>'wysiwyg','validation'=>'required','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Feature Image','name'=>'feature_image','type'=>'upload','validation'=>'required','width'=>'col-sm-10'];
+			
+			$this->form[] = ['label'=>'Seo Title','name'=>'seo_title','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Meta Description','name'=>'meta_description','type'=>'textarea','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -78,6 +81,7 @@
 	        | 
 	        */
 	        $this->addaction = array();
+	        $this->addaction[] = ['label'=>'Link','icon'=>'fa fa-link','color'=>'info','url'=>'../pages'.'/[slug]'];
 
 
 	        /* 
@@ -258,7 +262,7 @@
 	    */
 	    public function hook_before_add(&$postdata) {        
 	        //Your code here
-
+	    	$postdata["slug"] = str_replace(" ","-",$postdata["slug"]);
 	    }
 
 	    /* 
@@ -283,7 +287,7 @@
 	    */
 	    public function hook_before_edit(&$postdata,$id) {        
 	        //Your code here
-
+	    	$postdata["slug"] = str_replace(" ","-",$postdata["slug"]);
 	    }
 
 	    /* 
